@@ -4,9 +4,6 @@ services:
         image: mongo:latest
         ports:
             - "30001:27017"
-        depends_on:
-            - "mongo-rs1-setup"
-            - "mongo-cnf-setup"
         external_links:
             - mongod-service:mongod-service
             - mongos-service:mongos-service
