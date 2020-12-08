@@ -1,5 +1,13 @@
 # docker-mongo-services
 
+# Description
+
+This is a simple 3 node mongodb setup based on official mongo docker image using docker-compose described.
+
+configsvr
+shardsvr
+mongos
+
 # Run
 
 # First
