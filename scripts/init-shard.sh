@@ -4,7 +4,7 @@ mongodb1=`getent hosts ${MONGOS} | awk '{ print $1 }'`
 
 mongodb11=`getent hosts ${MONGO1} | awk '{ print $1 }'`
 
-port=${PORT:-27017}
+port=${PORT:-27010}
 
 echo "Waiting for startup.."
 until mongo --host ${mongodb1}:${port} --eval 'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)' &>/dev/null; do

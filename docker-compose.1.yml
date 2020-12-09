@@ -3,8 +3,8 @@ services:
         container_name: "mongosh-service"
         image: mongo:latest
         ports:
-            - "30012:27017"
-        command: mongod --replSet rs1 --shardsvr --port 27017
+            - "30012:27010"
+        command: mongod --replSet rs1 --shardsvr --port 27010
         restart: always
 
     mongo-rs1-setup:

@@ -3,11 +3,11 @@ services:
         container_name: "mongos-service"
         image: mongo:latest
         ports:
-            - "30001:27017"
+            - "30001:27010"
         external_links:
             - mongod-service:mongod-service
             - mongos-service:mongos-service
-        command: mongos --configdb cnf-serv/mongod-service:27017 --port 27017 --bind_ip 0.0.0.0
+        command: mongos --configdb cnf-serv/mongod-service:27010 --port 27010 --bind_ip 0.0.0.0
         restart: always
 
     mongo-shard-setup:
@@ -23,6 +23,6 @@ services:
             - MONGOS=mongos-service
             - MONGO1=mongosh-service
             - RS1=rs1
-            - PORT=27017
+            - PORT=27010
         entrypoint: ["/scripts/init-shard.sh"]
         restart: on-failure:20

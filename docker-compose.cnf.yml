@@ -3,8 +3,8 @@ services:
         container_name: "mongod-service"
         image: mongo:latest
         ports:
-            - "30101:27017"
-        command: mongod --replSet cnf-serv --configsvr --port 27017
+            - "30101:27010"
+        command: mongod --replSet cnf-serv --configsvr --port 27010
         restart: always
 
     mongo-cnf-setup:
@@ -19,5 +19,5 @@ services:
         environment:
             - MONGO1=mongod-service
             - RS=cnf-serv
-            - PORT=27017
+            - PORT=27010
         entrypoint: ["/scripts/setup-cnf.sh"]
