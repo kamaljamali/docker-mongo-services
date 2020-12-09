@@ -6,24 +6,30 @@ This is a simple 3 node mongodb setup based on official mongo docker image using
 
 configsvr
 shardsvr
-mongos
+mongos(router)
 
 # Run
 
 # First
 
 ```
-docker-compose -f docker-compose.cnf.yml
+docker-compose -f docker-configsvr.cnf.yml up
 ```
 
 # Second
 
 ```
-docker-compose -f docker-compose.1.yml up
+docker-compose -f docker-shardsvr.yml up
 ```
 
 # Third
 
 ```
-docker-compose -f up docker-compose.shard.yml up
+docker-compose -f docker-router.yml up
+```
+
+# OR
+
+```
+run start.sh
 ```
